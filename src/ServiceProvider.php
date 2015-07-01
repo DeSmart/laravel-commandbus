@@ -1,32 +1,35 @@
 <?php namespace DeSmart\CommandBus;
 
-use DeSmart\CommandBus\Commands\LocatorHandlerFactory;
-use Illuminate\Bus\Dispatcher;
-use Illuminate\Container\Container;
+use DeSmart\CommandBus\Contracts\CommandBus as CommandBusInterface;
+use DeSmart\CommandBus\Factory\Contracts\HandlerLocator;
+use DeSmart\CommandBus\Factory\HandlerLocatorFactory;
+use DeSmart\CommandBus\Factory\Contracts\ValidatorLocator;
+use DeSmart\CommandBus\Factory\ValidatorLocatorFactory;
+use DeSmart\CommandBus\Extractor\Contracts\CommandNameExtractor;
+use DeSmart\CommandBus\Extractor\ClassNameExtractor;
 
 class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {
-
     public function register()
     {
         $this->app->bind(
-            'DeSmart\CommandBus\Commands\Contracts\CommandBus',
-            'DeSmart\CommandBus\Commands\CommandBus'
+            CommandBusInterface::class,
+            CommandBus::class
         );
 
         $this->app->bind(
-            'DeSmart\CommandBus\Commands\Factory\Contracts\HandlerLocator',
-            'DeSmart\CommandBus\Commands\Factory\HandlerLocatorFactory'
+            HandlerLocator::class,
+            HandlerLocatorFactory::class
         );
 
         $this->app->bind(
-            'DeSmart\CommandBus\Commands\Factory\Contracts\ValidatorLocator',
-            'DeSmart\CommandBus\Commands\Factory\ValidatorLocatorFactory'
+            ValidatorLocator::class,
+            ValidatorLocatorFactory::class
         );
 
         $this->app->bind(
-            'DeSmart\CommandBus\Commands\Extractor\Contracts\CommandNameExtractor',
-            'DeSmart\CommandBus\Commands\Extractor\ClassNameExtractor'
+            CommandNameExtractor::class,
+            ClassNameExtractor::class
         );
     }
 }
