@@ -1,0 +1,33 @@
+{
+  "name": "desmart/commandbus",
+  "description": "DeSmart CommandBus for Laravel",
+  "require": {
+    "php": ">=5.6.0",
+    "illuminate/container": "~5.1",
+    "illuminate/support": "~5.1"
+  },
+  "require-dev": {
+    "phpspec/phpspec": "~2.1@dev"
+  },
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "DeSmart\\CommandBus\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "DeSmart\\CommandBus\\Stubs\\": "stubs/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Michał Golom",
+      "email": "gollum@desmart.com"
+    },
+    {
+      "name": "Kamil Piechaczek",
+      "email": "pomek@desmart.com"
+    }
+  ]
+}

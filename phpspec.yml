@@ -1,0 +1,4 @@
+suites:
+    ddd_suite:
+        namespace: DeSmart\CommandBus
+        psr4_prefix: DeSmart\CommandBus
