@@ -4,7 +4,7 @@ A small, pluggable command bus.
 
 ## Instalation
 
-1. `$ composer require desmart/commandbus`
+1. `$ composer require desmart/laravel-commandbus`
 2. Add `DeSmart\CommandBus\ServiceProvider` to `app.php`
 
 ## Example usage:
